@@ -1,6 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap');
+
 * {
-    font-family: "Comic Sans MS", "Comic Sans", cursive; // Cursed font
+    font-family: 'Nunito', sans-serif;
+    // font-family: "Comic Sans MS", "Comic Sans", cursive; // Cursed font
     margin: 0;
+    padding: 0;
+}
+
+$darkgreen: #81AE7F;
+$paragraph-text: #202124;
+$content-background: #EAFFE9D9;
+
+button {
+    all: unset;
 }
 
 .container {
@@ -9,21 +21,22 @@
     background-image: url("../img/background.jpg");
     background-position: 270px 0px;
     background-blend-mode: darken;
+    overflow: hidden;
 }
 
 header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 400px;
-    background-color: #81AE7F;
+    background-color: $darkgreen;
     border-radius: 0 28px 28px 0;
     color: white;
-    .text {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
+    text-align: center;
 
     img {
-        margin: 60px 65px 20px 65px;
+        margin: 20px 65px;
+        margin-top: 0;
         width: 270px;
     }
 
@@ -34,33 +47,123 @@ header {
 
     ul {
         list-style: none;
-        padding: 0px 0px 40px 0px;
+        padding-bottom: 32px;
+        display: grid;
+        gap: 15px;
         li {
             font-size: 28px;
-            padding-bottom: 15px;
+            font-weight: 500;
             a {
                 color: white;
+                text-decoration: none;
+                &:hover {
+                    color: rgba(255, 255, 255, 0.75);
+                }
             }
         }
     }
-
 }
 
 main {
-    height: 100vh;
+    padding: 60px 0;
+    // height: 100vh;
     width: 100%;
+    overflow-y: scroll;
     .content {
-        width: 1220px;
-        min-height: 800px;
+        padding: 30px 6%;
+        width: 95%;
+        min-height: 835px;
+        box-sizing: border-box;
         margin: auto;
-        margin-top: 60px;
         border-radius: 28px;
         text-align: center;
-        color: #81AE7F;
-        background-color: rgba(234, 255, 233, 0.85);
+        color: $darkgreen;
+        background-color: $content-background;
         h1 {
-            padding-top: 25px;
-            font-size: 50px;
+            padding-bottom: 50px;
+            font-size: 60px;
         }
+        p {
+            font-size: 25px;
+            color: $paragraph-text;
+            line-height: 1.5;
+            text-align: start;
+        }
+        .projects {
+            display: grid;
+            gap: 100px;
+        }
+        .project {
+            display: flex;
+            justify-content: space-between;
+            .demo {
+                width: 45%;
+            }
+            img {
+                width: 100%;
+            }
+            .text {
+                width: 50%;
+                color: $paragraph-text;
+                h3 {
+                    text-align: start;
+                    color: $darkgreen;
+                    font-size: 35px;
+                    padding-bottom: 2px;
+                }
+            }
+        }
+    }
+}
+
+.menubutton {
+    display: none;
+}
+
+@media (max-width: 1024px) { 
+    .menubutton {
+        display: block;
+        border-radius: 10px;
+        z-index: 1;
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        height: 45px;
+        width: 45px;
+        background-image: url('../img/icon.svg');
+        background-size: cover;
+    }
+    .menubutton:hover {
+        cursor: pointer;
+    }
+    .container {
+        background-position: -130px 0px;
+    }
+    header {
+        display: none;
+        position: absolute;
+        border-radius: 0;
+        height: 100vh;
+        width: 100vw;
+        transition: opacity 0.3s;
+        img {
+            margin: auto;
+            width: 200px;
+        }
+    }
+    header.hide {
+        opacity: 0;
+    }
+    .menubutton.active {
+        background-image: url('../img/icon-active.svg');
+    }
+    main {
+        padding: 10px 0;
+    }
+    .content {
+        width: 92% !important;
+    }
+    .display {
+        display: flex;
     }
 }

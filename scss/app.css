@@ -1,6 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap");
 * {
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: 'Nunito', sans-serif;
   margin: 0;
+  padding: 0;
+}
+
+button {
+  all: unset;
 }
 
 .container {
@@ -11,16 +17,10 @@
   background-image: url("../img/background.jpg");
   background-position: 270px 0px;
   background-blend-mode: darken;
+  overflow: hidden;
 }
 
 header {
-  width: 400px;
-  background-color: #81AE7F;
-  border-radius: 0 28px 28px 0;
-  color: white;
-}
-
-header .text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -28,11 +28,19 @@ header .text {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 400px;
+  background-color: #81AE7F;
+  border-radius: 0 28px 28px 0;
+  color: white;
   text-align: center;
 }
 
 header img {
-  margin: 60px 65px 20px 65px;
+  margin: 20px 65px;
+  margin-top: 0;
   width: 270px;
 }
 
@@ -43,36 +51,144 @@ header h2 {
 
 header ul {
   list-style: none;
-  padding: 0px 0px 40px 0px;
+  padding-bottom: 32px;
+  display: -ms-grid;
+  display: grid;
+  gap: 15px;
 }
 
 header ul li {
   font-size: 28px;
-  padding-bottom: 15px;
+  font-weight: 500;
 }
 
 header ul li a {
   color: white;
+  text-decoration: none;
+}
+
+header ul li a:hover {
+  color: rgba(255, 255, 255, 0.75);
 }
 
 main {
-  height: 100vh;
+  padding: 60px 0;
   width: 100%;
+  overflow-y: scroll;
 }
 
 main .content {
-  width: 1220px;
-  min-height: 800px;
+  padding: 30px 6%;
+  width: 95%;
+  min-height: 835px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: auto;
-  margin-top: 60px;
   border-radius: 28px;
   text-align: center;
   color: #81AE7F;
-  background-color: rgba(234, 255, 233, 0.85);
+  background-color: #EAFFE9D9;
 }
 
 main .content h1 {
-  padding-top: 25px;
-  font-size: 50px;
+  padding-bottom: 50px;
+  font-size: 60px;
+}
+
+main .content p {
+  font-size: 25px;
+  color: #202124;
+  line-height: 1.5;
+  text-align: start;
+}
+
+main .content .projects {
+  display: -ms-grid;
+  display: grid;
+  gap: 100px;
+}
+
+main .content .project {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main .content .project .demo {
+  width: 45%;
+}
+
+main .content .project img {
+  width: 100%;
+}
+
+main .content .project .text {
+  width: 50%;
+  color: #202124;
+}
+
+main .content .project .text h3 {
+  text-align: start;
+  color: #81AE7F;
+  font-size: 35px;
+  padding-bottom: 2px;
+}
+
+.menubutton {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .menubutton {
+    display: block;
+    border-radius: 10px;
+    z-index: 1;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    height: 45px;
+    width: 45px;
+    background-image: url("../img/icon.svg");
+    background-size: cover;
+  }
+  .menubutton:hover {
+    cursor: pointer;
+  }
+  .container {
+    background-position: -130px 0px;
+  }
+  header {
+    display: none;
+    position: absolute;
+    border-radius: 0;
+    height: 100vh;
+    width: 100vw;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+  }
+  header img {
+    margin: auto;
+    width: 200px;
+  }
+  header.hide {
+    opacity: 0;
+  }
+  .menubutton.active {
+    background-image: url("../img/icon-active.svg");
+  }
+  main {
+    padding: 10px 0;
+  }
+  .content {
+    width: 92% !important;
+  }
+  .display {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 /*# sourceMappingURL=app.css.map */

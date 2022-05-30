@@ -9,15 +9,17 @@
 </head>
 <body>
     <div class="container">
-        <header>
+        <button onclick="toggleVisible()" class="menubutton"></button> <!-- mobile only -->
+
+        <header class="hide"> <!-- class for mobile functionality -->
             <img src="img/placeholder.jpg" alt="">
             <div class="text">
                 <h2>Summer James</h1>
                 <nav>
                     <ul>
-                        <li><a href="">About me</a></li>
-                        <li><a href="">Projects</a></li>
-                        <li><a href="">Skills</a></li>
+                        <li><a href="/">About me</a></li>
+                        <li><a href="/projects.html">Projects</a></li>
+                        <li><a href="/skills.html">Skills</a></li>
                         <li><a href="">Resume</a></li>
                     </ul>
                 </nav>
@@ -35,5 +37,7 @@
             </div>
         </main>
     </div>
+
+    <script src="js/app.js"></script>
 </body>
 </html>
