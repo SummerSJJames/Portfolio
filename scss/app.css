@@ -142,6 +142,18 @@ main .content .project .text h3 {
 }
 
 @media (max-width: 1024px) {
+  .projects {
+    gap: 60px !important;
+  }
+  .projects .project {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .projects .project div {
+    width: 100% !important;
+  }
   .menubutton {
     display: block;
     border-radius: 10px;

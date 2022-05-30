@@ -121,6 +121,15 @@ main {
 }
 
 @media (max-width: 1024px) { 
+    .projects {
+        gap: 60px !important;
+        .project {
+            flex-direction: column;
+            div {
+                width: 100% !important;
+            }
+        }
+    }
     .menubutton {
         display: block;
         border-radius: 10px;
@@ -132,9 +141,9 @@ main {
         width: 45px;
         background-image: url('../img/icon.svg');
         background-size: cover;
-    }
-    .menubutton:hover {
-        cursor: pointer;
+        &:hover {
+            cursor: pointer;
+        }
     }
     .container {
         background-position: -130px 0px;
